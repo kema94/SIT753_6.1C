@@ -6,14 +6,14 @@ pipeline{
         TESTING_ENVIRONMENT = 'testing'
         PRODUCTION_ENVIRONMENT = 'productionEnvironment'
     }
-
+    //This is task 6.1C
     stages{
         stage('Build'){
             steps{
                 echo "Initializing build process with Maven."              
             }
         }
-        stage('Unit and Integration Tests'){
+        stage('Unit and Integration Tests'){ 
             steps{
                 echo "Executing Unit tests.."
                 echo "Conducting Integration tests.."
