@@ -49,9 +49,9 @@ pipeline{
                 echo "Tesing polling..."
             }
         }
-         stage('Completed'){
+         stage('Completed new'){
             steps{
-                echo "Tesing polling 2..."
+                echo "Tesing polling 3..."
             }
         }
     }
