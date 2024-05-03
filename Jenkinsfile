@@ -47,13 +47,6 @@ pipeline{
             steps{
                echo "Deploying application to staging environment.."
             }
-             post{
-                success{
-                    mail to: "kemasanka981@gmail.com",
-                    subject: "Security Scan Status Email",
-                    body: "Security Scan was successful"
-                }
-            }
         }
         stage('Integration Tests on Staging'){
             steps{
