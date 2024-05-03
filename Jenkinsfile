@@ -10,7 +10,7 @@ pipeline{
     stages{
         stage('Build'){
             steps{
-                echo "Initializing build process with Maven.."              
+                echo "Initializing build process with Maven."              
             }
         }
         stage('Unit and Integration Tests'){
@@ -42,6 +42,11 @@ pipeline{
          stage('Deploy to Production'){
             steps{
                 echo "Deploying the application to a production server.."
+            }
+        }
+        stage('Completed'){
+            steps{
+                echo "Tesing polling..."
             }
         }
     }
