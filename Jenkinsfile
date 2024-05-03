@@ -49,5 +49,10 @@ pipeline{
                 echo "Tesing polling..."
             }
         }
+         stage('Completed'){
+            steps{
+                echo "Tesing polling 2..."
+            }
+        }
     }
 }
