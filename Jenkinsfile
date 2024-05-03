@@ -25,40 +25,72 @@ pipeline{
                 echo "Executing Unit tests.."
                 echo "Conducting Integration tests.."
             }
+            post{
+                success{
+                    mail to: "kemasanka981@gmail.com",
+                    subject: "Unit and Integration Tests Status Email",
+                    body: "Unit and Integration Tests was successful"
+                }
+            }
         }
         stage('Code Analysis'){
             steps{
                 echo "Performing code analysing.."
+            }
+            post{
+                success{
+                    mail to: "kemasanka981@gmail.com",
+                    subject: "Code Analysis Status Email",
+                    body: "Code Analysis was successful"
+                }
             }
         }
         stage('Security Scan'){
             steps{
                 echo "Conducting security evalution.."
             }
+            post{
+                success{
+                    mail to: "kemasanka981@gmail.com",
+                    subject: "Security Scan Status Email",
+                    body: "Security Scan was successful"
+                }
+            }
         }
         stage('Deply to Staging'){
             steps{
                echo "Deploying application to staging environment.."
+            }
+            post{
+                success{
+                    mail to: "kemasanka981@gmail.com",
+                    subject: "Deply to Staging Status Email",
+                    body: "Deply to Staging was successful"
+                }
             }
         }
         stage('Integration Tests on Staging'){
             steps{
                 echo "Running integration tests on the staging environment to ensure the application.."
             }
+            post{
+                success{
+                    mail to: "kemasanka981@gmail.com",
+                    subject: "Integration Tests on Staging Status Email",
+                    body: "Integration Tests on Staging was successful"
+                }
+            }
         }
          stage('Deploy to Production'){
             steps{
                 echo "Deploying the application to a production server.."
             }
-        }
-        stage('Completed'){
-            steps{
-                echo "Tesing polling..."
-            }
-        }
-         stage('Completed new'){
-            steps{
-                echo "Tesing polling 3..."
+             post{
+                success{
+                    mail to: "kemasanka981@gmail.com",
+                    subject: "Deploy to Production Status Email",
+                    body: "Deploy to Production was successful"
+                }
             }
         }
     }
