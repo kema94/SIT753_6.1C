@@ -12,13 +12,6 @@ pipeline{
             steps{
                 echo "Initializing build process with Maven."              
             }
-            post{
-                success{
-                    mail to: "kemasanka981@gmail.com",
-                    subject: "Build Status Email",
-                    body: "Build was successful"
-                }
-            }
         }
         stage('Unit and Integration Tests'){
             steps{
@@ -37,13 +30,6 @@ pipeline{
             steps{
                 echo "Performing code analysing.."
             }
-            post{
-                success{
-                    mail to: "kemasanka981@gmail.com",
-                    subject: "Code Analysis Status Email",
-                    body: "Code Analysis was successful"
-                }
-            }
         }
         stage('Security Scan'){
             steps{
@@ -61,36 +47,15 @@ pipeline{
             steps{
                echo "Deploying application to staging environment.."
             }
-            post{
-                success{
-                    mail to: "kemasanka981@gmail.com",
-                    subject: "Deply to Staging Status Email",
-                    body: "Deply to Staging was successful"
-                }
-            }
         }
         stage('Integration Tests on Staging'){
             steps{
                 echo "Running integration tests on the staging environment to ensure the application.."
             }
-            post{
-                success{
-                    mail to: "kemasanka981@gmail.com",
-                    subject: "Integration Tests on Staging Status Email",
-                    body: "Integration Tests on Staging was successful"
-                }
-            }
         }
          stage('Deploy to Production'){
             steps{
                 echo "Deploying the application to a production server.."
-            }
-             post{
-                success{
-                    mail to: "kemasanka981@gmail.com",
-                    subject: "Deploy to Production Status Email",
-                    body: "Deploy to Production was successful"
-                }
             }
         }
     }
