@@ -12,6 +12,13 @@ pipeline{
             steps{
                 echo "Initializing build process with Maven."              
             }
+            post{
+                success{
+                    mail to: "kemasanka981@gmail.com",
+                    subject: "Build Status Email",
+                    Body: "Build was successful"
+                }
+            }
         }
         stage('Unit and Integration Tests'){
             steps{
