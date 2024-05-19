@@ -6,7 +6,7 @@ pipeline{
         TESTING_ENVIRONMENT = 'testing'
         PRODUCTION_ENVIRONMENT = 'productionEnvironment'
     }
-    //This is task 6.1C hjhjhhj gfgfgfgf dfsfdsdfsdfs
+    //This is task 6.1C hjhjhhj gfgfgfgf dfsfdsdfsdfs hjhgjhgjh
     stages{
         stage('Build'){
             steps{
