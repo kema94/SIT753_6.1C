@@ -6,7 +6,8 @@ pipeline{
         TESTING_ENVIRONMENT = 'testing'
         PRODUCTION_ENVIRONMENT = 'productionEnvironment'
     }
-    //This is task 6.1C hjhjhhj gfgfgfgf dfsfdsdfsdfs hjhgjhgjh
+    //This is task 6.1C
+    //test kema
     stages{
         stage('Build'){
             steps{
